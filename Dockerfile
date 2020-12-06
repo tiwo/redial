@@ -1,5 +1,5 @@
-FROM python:3.5.7-slim-stretch
+FROM python:3-alpine
 
-RUN apt-get update && apt-get install -y mc
+RUN apk add --update-cache mc && rm -rf /var/cache/apk/*
 
-RUN pip --no-cache-dir install redial
+RUN pip3 --no-cache-dir install redial
